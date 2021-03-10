@@ -136,7 +136,7 @@
                         var myChart = echarts.init(document.getElementById("guanxi"));
                         myChart.showLoading();
                         var rela = { "data": [], "links": [] };
-                        $.getJSON('../static/data.json', function (json) {
+                        $.getJSON('/all_kg', function (json) {
                             rela = json;
 
                         });
@@ -144,7 +144,7 @@
                         option = {
                             // backgroundColor: "white",
                             title: {
-                                text: '红楼梦人物关系图',
+                                text: 'Knowledge Graph Visualization',
                                 textStyle: {
                                     // color: "white",
                                     fontWeight: "lighter",
@@ -155,7 +155,7 @@
                             legend: {
                                 x: "center",
                                 show: true,
-                                data: ["贾家荣国府", "贾家宁国府", "王家", "史家", "薛家", "其他", "林家"]
+                                data: ["Level0", "Level1", "Level2", "Level3", "Level4", "Others"]
                             },
                             series: [
                                 {
@@ -181,21 +181,21 @@
                                     draggable: true,
                                     roam: true,
                                     categories: [{
-                                        name: '贾家荣国府',
+                                        name: 'Level0',
                                         // itemStyle: {
                                         //     normal: {
                                         //         color: "#009800",
                                         //     }
                                         // }
                                     }, {
-                                        name: '贾家宁国府',
+                                        name: 'Level1',
                                         // itemStyle: {
                                         //     normal: {
                                         //         color: "#4592FF",
                                         //     }
                                         // }
                                     }, {
-                                        name: '王家',
+                                        name: 'Level2',
                                         // itemStyle: {
                                         //     normal: {
                                         //         color: "#3592F",
@@ -203,14 +203,11 @@
                                         // }
                                     },
                                     {
-                                        name: '史家',
+                                        name: 'Level3',
                                     }, {
-                                        name: '薛家',
+                                        name: 'Level4',
                                     }, {
-                                        name: '其他',
-                                    },
-                                    {
-                                        name: '林家',
+                                        name: 'Others',
                                     }
                                     ],
                                     label: {
@@ -287,7 +284,7 @@
 						            
                                   
                                     <!--Category name-->
-						            <li class="list-header"> 人物关系可视化</li>
+						            <li class="list-header"> Visualization</li>
                         
                                     <!--Menu list item-->
                                     
@@ -297,7 +294,7 @@
                                         <a href="{{ url_for('search') }}">
                                             <i class="fa fa-search" style="width:24px"></i>
                                             <span class="menu-title">
-                                                <strong>检索人物关系</strong>
+                                                <strong>Search</strong>
                                             </span>
                                             
                                         </a>
@@ -308,7 +305,7 @@
                                         <a href="{{ url_for('get_all_relation') }}">
                                             <i class="fa fa-pie-chart" style="width:24px"></i>
                                             <span class="menu-title">
-                                                <strong>红楼梦人物关系全貌</strong>
+                                                <strong>The Whole Knowledge Graph</strong>
                                             </span>
                                             
                                         </a>
@@ -325,7 +322,7 @@
 						
 						            <!--Menu list item-->
 						            <li >
-						                <a href="{{ url_for('KGQA') }}">
+						                <a href="{{ url_for('fold') }}">
 						                    <i class="fa fa-question-circle" style="width:24px"></i>
 						                    <span class="menu-title"></span>
 

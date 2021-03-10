@@ -131,7 +131,7 @@
                 <!--===================================================-->
                 <div id="page-content">
                     
-					<h4 class="text-main pad-btm bord-btm">人物关系可视化</h4>
+					<h4 class="text-main pad-btm bord-btm">Visualzation</h4>
                 
               <div class="row">
                 
@@ -143,8 +143,8 @@
                     <div class="col-lg-2"></div>
                     <div class="col-lg-4">
                         <div class="input-group" >
-                            <input type="text" id="search" class="form-control input-lg"  placeholder="请输入你要检索的名字...">
-                            <span class="input-group-addon btn btn-mint"  onclick="search()">搜索</span>
+                            <input type="text" id="search" class="form-control input-lg"  placeholder="Please input a keywords...">
+                            <span class="input-group-addon btn btn-mint"  onclick="search()">Search</span>
                         
                         </div>
                     </div>
@@ -158,26 +158,22 @@
                     </div>
                     <div class="col-lg-2"></div>
                     <div  class="col-lg-4" id="tagsList">
-                    <a href="#" data="林黛玉" >林黛玉</a>
-                    <a href="#" data="薛宝钗">薛宝钗</a>
-                    <a href="#" data="贾宝玉">贾宝玉</a>
-                    <a href="#" data="王熙凤">王熙凤</a>
-                    <a href="#" data="贾政">贾政</a>
-                    <a href="#" data="贾母">贾母</a>
-                    <a href="#" data="贾赦">贾赦</a>
-                    <a href="#" data="贾琏">贾琏</a>
-                    <a href="#" data="贾珍">贾珍</a>
-                    <a href="#" data="王夫人">王夫人</a>
-                    <a href="#" data="贾探春">贾探春</a>
-                    <a href="#" data="贾迎春">贾迎春</a>
-                    <a href="#" data="贾惜春">贾惜春</a>
-                    <a href="#" data="贾环">贾环</a>
-                    <a href="#" data="巧姐">巧姐</a>
-                    <a href="#" data="袭人">袭人</a>
-                    <a href="#" data="贾敬">贾敬</a>
-                    <a href="#" data="贾蓉">贾蓉</a>
-                    <a href="#" data="贾兰">贾兰</a>
-                    <a href="#" data="史湘云">史湘云</a>
+                    <a href="#" data="ArtificialIntelligence" >AI</a>
+                    <a href="#" data="DataMining">DataMining</a>
+                    <a href="#" data="MachineLearning">ML</a>
+                    <a href="#" data="ComputerVision">CV</a>
+                    <a href="#" data="Robotics">Robotics</a>
+                    <a href="#" data="InformationRetrieval">Information</a>
+                    <a href="#" data="AnomalyDetection">Anomaly</a>
+                    <a href="#" data="Classification">Classification</a>
+                    <a href="#" data="Regression">Regression</a>
+                    <a href="#" data="Summarization">Summarization</a>
+                    <a href="#" data="Embedding">Embedding</a>
+                    <a href="#" data="NetworkEmbedding">Embedding</a>
+                    <a href="#" data="UnsupervisedLearning">Unsupervised</a>
+                    <a href="#" data="SupervisedLearning">Supervised</a>
+                    <a href="#" data="AssociationRuleLearning">ARL</a>
+                    <a href="#" data="Embedding">NLP</a>
                     </div>
                     </div>
 					
@@ -207,7 +203,7 @@
 						            
                                   
                                     <!--Category name-->
-						            <li class="list-header"> 人物关系可视化</li>
+						            <li class="list-header">KG Visualization</li>
                         
                                     <!--Menu list item-->
                                     
@@ -217,7 +213,7 @@
                                         <a href="{{ url_for('search') }}">
                                             <i class="fa fa-search" style="width:24px"></i>
                                             <span class="menu-title">
-                                                <strong>检索人物关系</strong>
+                                                <strong>Search in KG</strong>
                                             </span>
                                             
                                         </a>
@@ -228,7 +224,7 @@
                                         <a href="{{ url_for('get_all_relation') }}">
                                             <i class="fa fa-pie-chart" style="width:24px"></i>
                                             <span class="menu-title">
-                                                <strong>红楼梦人物关系全貌</strong>
+                                                <strong>The Whole Graph</strong>
                                             </span>
                                             
                                         </a>
@@ -245,7 +241,7 @@
 						
 						            <!--Menu list item-->
 						            <li >
-						                <a href="{{ url_for('KGQA') }}">
+						                <a href="{{ url_for('fold') }}">
 						                    <i class="fa fa-question-circle" style="width:24px"></i>
 <!--						                    <span class="menu-title">人物关系问答</span>-->
 											
@@ -310,7 +306,7 @@
     option = {
         // backgroundColor: "white",
         title: {
-            // text: '红楼梦人物关系图',
+            // text: 'Graph Structure',
             textStyle: {
                 // color: "white",
                 fontWeight: "lighter",
@@ -321,7 +317,7 @@
         legend: {
             x: "center",
             show: true,
-            data: ["贾家荣国府", "贾家宁国府", "王家", "史家", "薛家", "其他", "林家"]
+            data: ["Level0", "Level1", "Level2", "Level3", "Level4", "Others"]
         },
         series: [
             {
@@ -347,21 +343,21 @@
                 draggable: true,
                 roam: true,
                 categories: [{
-                    name: '贾家荣国府',
+                    name: 'Level0',
                     // itemStyle: {
                     //     normal: {
                     //         color: "#009800",
                     //     }
                     // }
                 }, {
-                    name: '贾家宁国府',
+                    name: 'Level1',
                     // itemStyle: {
                     //     normal: {
                     //         color: "#4592FF",
                     //     }
                     // }
                 }, {
-                    name: '王家',
+                    name: 'Level2',
                     // itemStyle: {
                     //     normal: {
                     //         color: "#3592F",
@@ -369,14 +365,11 @@
                     // }
                 },
                 {
-                    name: '史家',
+                    name: 'Level3',
                 }, {
-                    name: '薛家',
+                    name: 'Level4',
                 }, {
-                    name: '其他',
-                },
-                {
-                    name: '林家',
+                    name: 'Others',
                 }
                 ],
                 label: {

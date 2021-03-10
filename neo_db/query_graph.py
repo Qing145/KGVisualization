@@ -13,6 +13,16 @@ def query(name):
     )
     data = list(data)
     return get_json_data(data)
+
+
+def all_graph():
+    data = graph.run(
+        "match(p)-[r]->(n) return  p.Name,r.relation,n.Name,p.cate,n.cate"
+    )
+    data = list(data)
+    return get_json_data(data)
+
+
 def get_json_data(data):
     json_data={'data':[],"links":[]}
     d=[]

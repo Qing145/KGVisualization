@@ -4,7 +4,7 @@ graph = Graph(
     username="neo4j",
     password="qing"
 )
-CA_LIST = {"贾家荣国府":0,"贾家宁国府":1,"王家":2,"史家":3,"薛家":4,"其他":5,"林家":6}
+CA_LIST = {"Level0":0,"Level1":1,"Level2":2,"Level3":3,"Level4":4,"Others":5}
 similar_words = {
     "爸爸": "父亲",
     "妈妈": "母亲",
